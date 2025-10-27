@@ -1,0 +1,474 @@
+/* ============================================================
+   📘 WORDORA — Shiny Professional Light Theme 
+   ------------------------------------------------------------
+   - Multi-color gradients & shine effects
+   - Smooth animations for hero, cards, and buttons
+   - Cross-browser compatible properties
+   ============================================================ */
+
+/* -------------------- Global Reset & Base -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Inter", system-ui, Arial, sans-serif;
+}
+
+/* Background with soft gradient tones */
+body {
+  background: linear-gradient(180deg, #aab3d4 0%, #a0b8ff 50%, #d0dbff 100%);
+  color: #1a1a1a;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #5b6fff, #9b7eff);
+  border-radius: 8px;
+}
+
+/* -------------------- Root Layout -------------------- */
+.app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: min(1100px, 95%);
+  margin: 32px auto;
+  flex: 1;
+}
+
+/* -------------------- Header -------------------- */
+/* Frosted glass header with glowing hover */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  padding: 14px 22px;
+  border-radius: 16px;
+  border: 1px solid rgba(160, 170, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(20, 20, 60, 0.08);
+  position: sticky;
+  top: 12px;
+  z-index: 20;
+  transition: all 0.4s ease;
+}
+
+.header:hover {
+  box-shadow: 0 0 25px rgba(110, 120, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Brand logo text with shiny gradient animation */
+.brand {
+  font-weight: 700;
+  font-size: 24px;
+  background: linear-gradient(90deg, #384bff, #a06cff, #00b8ff);
+  background-size: 200%;
+  background-clip: text;            /* ✅ Standard property */
+  -webkit-background-clip: text;    /* ✅ WebKit support */
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.3px;
+  transition: background-position 0.6s ease;
+}
+
+.brand:hover {
+  background-position: 100%;
+}
+
+/* Navigation links with neon underline */
+.header nav a {
+  margin-left: 16px;
+  text-decoration: none;
+  color: #222;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Animated underline on hover */
+.header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #4c6fff, #7f8bff, #00eaff);
+  transition: width 0.4s ease;
+}
+
+.header nav a:hover::after {
+  width: 100%;
+}
+
+/* Active/hover state with glow */
+.header nav a:hover,
+.header nav a.active {
+  color: #fff;
+  background: linear-gradient(90deg, #5468ff, #8f67ff);
+  box-shadow: 0 0 10px rgba(130, 100, 255, 0.4);
+}
+
+/* -------------------- Hero Section -------------------- */
+/* Gradient hero with moving light streak */
+.hero {
+  background: linear-gradient(135deg, #ffffff, #eaf0ff, #d4dbff);
+  padding: 36px 28px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(40, 40, 80, 0.1);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Moving light shine */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  animation: shine 4s infinite;
+}
+
+/* Hero content */
+.hero h1 {
+  font-size: 34px;
+  font-weight: 700;
+  color: #101535;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  color: #444c68;
+  font-size: 17px;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* -------------------- Controls -------------------- */
+/* Search and category dropdown section */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+.search,
+select {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5e0;
+  background: #fff;
+  font-size: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.search:focus,
+select:focus {
+  border-color: #6b7fff;
+  box-shadow: 0 0 10px rgba(91, 115, 255, 0.3);
+}
+
+/* -------------------- Section Headings -------------------- */
+.section-heading {
+  text-align: center;
+  margin: 28px 0 18px;
+  font-size: 24px;
+  color: #111827;
+  font-weight: 600;
+  position: relative;
+  animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+/* Animated shiny underline */
+.section-heading::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 10px auto 0;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #5468ff, #8a65ff, #00eaff);
+  background-size: 200%;
+  animation: gradientFlow 4s linear infinite;
+}
+
+/* -------------------- Book Grid -------------------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 22px;
+  animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+/* Book cards with shine sweep */
+.book-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(30, 40, 80, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.book-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transition: all 0.5s ease;
+}
+
+.book-card:hover::before {
+  left: 100%;
+}
+
+.book-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(60, 70, 140, 0.2);
+}
+
+/* Book image */
+.cover {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.book-card:hover .cover {
+  transform: scale(1.05);
+}
+
+/* Card content info */
+.info {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f1128;
+}
+
+.author {
+  font-size: 13px;
+  color: #5b5f78;
+}
+
+/* Details link */
+.details-link {
+  margin-top: 6px;
+  color: #5468ff;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.details-link:hover {
+  color: #00b8ff;
+  text-shadow: 0 0 8px rgba(0, 184, 255, 0.6);
+}
+
+/* -------------------- Book Details -------------------- */
+.details-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  margin-top: 22px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.cover-large {
+  width: 240px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(20, 20, 50, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.cover-large:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 22px rgba(76, 111, 255, 0.3);
+}
+
+/* Back navigation */
+.back {
+  background: none;
+  border: none;
+  color: #5468ff;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.back:hover {
+  color: #7f3dff;
+  text-shadow: 0 0 8px rgba(127, 61, 255, 0.4);
+}
+
+/* -------------------- Add Book Form -------------------- */
+.add-form {
+  display: grid;
+  gap: 14px;
+  max-width: 700px;
+  margin-top: 18px;
+  animation: fadeInUp 1s ease-out 0.3s backwards;
+}
+
+.add-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 500;
+  color: #2b2f39;
+}
+
+/* Inputs with glow */
+.add-form input,
+.add-form textarea,
+.add-form select {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #c6c9dc;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.add-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.add-form input:focus,
+.add-form textarea:focus,
+.add-form select:focus {
+  border-color: #5468ff;
+  box-shadow: 0 0 12px rgba(76, 111, 255, 0.25);
+}
+
+/* Primary button with animated shine */
+button.primary {
+  background: linear-gradient(90deg, #5468ff, #8a65ff, #00eaff);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  width: max-content;
+  background-size: 200%;
+  animation: gradientFlow 6s linear infinite;
+}
+
+button.primary:hover {
+  background-position: 100%;
+  box-shadow: 0 0 20px rgba(100, 100, 255, 0.5);
+  transform: translateY(-3px);
+}
+
+/* -------------------- Footer -------------------- */
+footer {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 16px;
+  text-align: center;
+  color: #565f76;
+  font-size: 14px;
+  border-radius: 14px;
+  margin-top: auto;
+  box-shadow: 0 -2px 10px rgba(20, 20, 50, 0.04);
+  animation: fadeInUp 1s ease-out;
+}
+
+/* -------------------- Animations -------------------- */
+/* Fade-in + upward motion */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Moving shine effect */
+@keyframes shine {
+  0% {
+    left: -80%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+
+/* Gradient shifting animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 720px) {
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .cover {
+    height: 220px;
+  }
+
+  .cover-large {
+    width: 180px;
+    height: 260px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

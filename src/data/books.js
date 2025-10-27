@@ -1,0 +1,66 @@
+// Sample book data. Images referenced from /public so the project works offline.
+
+const books = [
+  {
+    id: "b1",
+    title: "The Silent Patient",
+    author: "Alex Michaelides",
+    category: "Fiction",
+    description: "A psychological thriller about a woman who stops speaking.",
+    rating: 4.2,
+    cover: "/silent-patient.jpg",
+    popular: true,
+  },
+  {
+    id: "b2",
+    title: "Sapiens: A Brief History of Humankind",
+    author: "Yuval Noah Harari",
+    category: "Non-Fiction",
+    description: "Explores history and the impact of Homo sapiens.",
+    rating: 4.6,
+    cover: "/sapiens.jpg",
+    popular: true,
+  },
+  {
+    id: "b3",
+    title: "Dune",
+    author: "Frank Herbert",
+    category: "Sci-Fi",
+    description: "Epic science fiction about politics and desert planets.",
+    rating: 4.5,
+    cover: "/dune.jpg",
+    popular: true,
+  },
+  {
+    id: "b4",
+    title: "Clean Code",
+    author: "Robert C. Martin",
+    category: "Non-Fiction",
+    description: "A handbook of agile software craftsmanship.",
+    rating: 4.7,
+    cover: "/clean-code.jpg",
+    popular: false,
+  },
+  {
+    id: "b5",
+    title: "The Martian",
+    author: "Andy Weir",
+    category: "Sci-Fi",
+    description: "A stranded astronaut uses science to survive.",
+    rating: 4.4,
+    cover: "/martian.jpg",
+    popular: false,
+  },
+  {
+    id: "b6",
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    category: "Fiction",
+    description: "Classic novel addressing serious themes with warmth.",
+    rating: 4.8,
+    cover: "/mockingbird.jpg",
+    popular: true,
+  },
+];
+
+export default books;
