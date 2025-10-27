@@ -2,15 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=/Wordora/" />
+    <meta http-equiv="refresh" content="0; url=./index.html" />
     <script type="text/javascript">
-      // Redirect for single-page apps on GitHub Pages
-      const redirectTo = window.location.protocol + "//" + window.location.host + "/Wordora/";
+      // Redirect logic for GitHub Pages + HashRouter
+      // GitHub Pages serves 404.html for unknown routes — this script ensures it falls back to index.html
+      const redirectTo = window.location.origin + window.location.pathname.replace("404.html", "index.html");
       window.location.replace(redirectTo);
     </script>
     <title>Redirecting...</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        text-align: center;
+        margin-top: 20vh;
+        color: #333;
+      }
+      a {
+        color: #4c6fff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
-    <p>Redirecting to <a href="/Wordora/">Wordora Home</a>...</p>
+    <h2>Redirecting to Wordora Home...</h2>
+    <p>If you are not redirected automatically, <a href="./index.html">click here</a>.</p>
   </body>
 </html>

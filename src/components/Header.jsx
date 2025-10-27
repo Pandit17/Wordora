@@ -1,4 +1,5 @@
-// Top navigation bar using NavLink to show active link state.
+// Defines the top navigation bar with brand name and page links.
+// NavLink is used to apply an active class automatically based on the current route.
 
 import React from "react";
 import { NavLink } from "react-router-dom";
@@ -6,9 +7,11 @@ import { NavLink } from "react-router-dom";
 export default function Header() {
   return (
     <header className="header">
+      {/* Application title or brand */}
       <div className="brand">Wordora</div>
+
+      {/* Navigation links for main sections */}
       <nav>
-        {/* NavLink applies active styling automatically */}
         <NavLink to="/" end className={({ isActive }) => (isActive ? "active" : "")}>
           Home
         </NavLink>

@@ -19,44 +19,43 @@ It fulfills the assignment requirements:
 ```
 
 Wordora/
-├─ public/
-│  ├─ clean-code.jpg
-│  ├─ dune.jpg
-│  ├─ favicon.ico
-│  ├─ martian.jpg
-│  ├─ mockingbird.jpg
-│  ├─ sapiens.jpg
-│  └─ silent-patient.jpg
-│
+├─ index.html
+├─ 404.html
+├─ eslint.config.js
+├─ .gitignore
+├─ package-lock.json
+├─ package.json
+├─ vite.config.js
 ├─ src/
-│  ├─ App.jsx
 │  ├─ main.jsx
+│  ├─ App.jsx
 │  ├─ styles.css
-│  ├─ data/
-│  │  └─ books.js
-│  ├─ redux/
-│  │  ├─ store.js
-│  │  └─ booksSlice.js
+│  ├─ assets/                 
+│  │  ├─ favicon.png          
+│  │  ├─ clean-code.jpg
+│  │  ├─ dune.jpg
+│  │  ├─ martian.jpg
+│  │  ├─ mockingbird.jpg
+│  │  ├─ sapiens.jpg
+│  │  └─ silent-patient.jpg
 │  ├─ components/
 │  │  ├─ Header.jsx
 │  │  ├─ Layout.jsx
-│  │  ├─ SearchBar.jsx
-│  │  └─ BookCard.jsx
+│  │  ├─ BookCard.jsx
+│  │  └─ SearchBar.jsx
 │  ├─ pages/
 │  │  ├─ Home.jsx
 │  │  ├─ Browse.jsx
 │  │  ├─ AddBook.jsx
 │  │  ├─ BookDetails.jsx
 │  │  └─ NotFound.jsx
-│
-├─ .gitignore
-├─ 404.html
-├─ eslint.config.js
-├─ index.html
-├─ package.json
-├─ package-lock.json
-├─ README.md
-└─vite.config.js
+│  ├─ redux/
+│  │  ├─ store.js
+│  │  └─ booksSlice.js
+│  └─ data/
+│     └─ books.js
+└─ README.md
+
 
 ````
 

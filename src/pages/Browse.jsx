@@ -1,32 +1,30 @@
-// Displays all books with search and category filtering.
+// Displays all books with live search and category-based filtering.
 
 import React, { useState } from "react";
-import booksData from "../data/books";
+import { books as booksData } from "../data/books"; 
 
 export default function Browse() {
-  const [query, setQuery] = useState(""); // Stores search input
-  const [category, setCategory] = useState("all"); // Stores selected category
+  // Stores user search query and selected category
+  const [query, setQuery] = useState("");
+  const [category, setCategory] = useState("all");
 
-  // Filters books based on search query and selected category
+  // Filters books based on query and category
   const filteredBooks = booksData.filter((book) => {
     const matchesQuery =
       book.title.toLowerCase().includes(query.toLowerCase()) ||
       book.author.toLowerCase().includes(query.toLowerCase());
-    const matchesCategory =
-      category === "all" || book.category === category;
+    const matchesCategory = category === "all" || book.category === category;
     return matchesQuery && matchesCategory;
   });
 
-  // Prevents page reload on pressing Enter
+  // Prevents form submission when pressing Enter inside the search field
   const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-    }
+    if (e.key === "Enter") e.preventDefault();
   };
 
   return (
     <div className="container">
-      {/* Search and category controls */}
+      {/* Search input and category dropdown */}
       <div className="controls">
         <input
           type="text"
@@ -35,11 +33,13 @@ export default function Browse() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={handleKeyPress}
+          aria-label="Search books"
         />
 
         <select
           value={category}
           onChange={(e) => setCategory(e.target.value)}
+          aria-label="Filter by category"
         >
           <option value="all">All Categories</option>
           <option value="fiction">Fiction</option>
@@ -50,7 +50,7 @@ export default function Browse() {
         </select>
       </div>
 
-      {/* Grid of filtered books */}
+      {/* Displays filtered books or a fallback message */}
       <div className="grid">
         {filteredBooks.length > 0 ? (
           filteredBooks.map((book) => (
@@ -59,16 +59,14 @@ export default function Browse() {
               <div className="info">
                 <h3>{book.title}</h3>
                 <p className="author">{book.author}</p>
-                <a href={`/details/${book.id}`} className="details-link">
+                <a href={`/book/${book.id}`} className="details-link">
                   View Details →
                 </a>
               </div>
             </div>
           ))
         ) : (
-          <p style={{ textAlign: "center", width: "100%" }}>
-            ❌ No books found matching “{query}”
-          </p>
+          <p className="no-books">❌ No books found matching “{query}”</p>
         )}
       </div>
     </div>
