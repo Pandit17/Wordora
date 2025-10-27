@@ -50,11 +50,12 @@ Wordora/
 │  │  └─ NotFound.jsx
 │
 ├─ .gitignore
-├─ README.md
+├─ 404.html
 ├─ eslint.config.js
 ├─ index.html
 ├─ package.json
 ├─ package-lock.json
+├─ README.md
 └─vite.config.js
 
 ````

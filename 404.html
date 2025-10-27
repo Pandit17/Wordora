@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="3; url=/Wordora/" />
+    <title>Redirecting — Wordora</title>
+    <link rel="icon" type="image/x-icon" href="/Wordora/favicon.ico" />
+
+    <style>
+      /* Page setup */
+      body {
+        background: linear-gradient(135deg, #dce4ff, #e6ebff, #f2f4ff);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: "Poppins", sans-serif;
+        color: #1f2937;
+        text-align: center;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 42px;
+        color: #3442d9;
+        margin-bottom: 10px;
+        animation: fadeIn 1s ease-out forwards;
+      }
+
+      p {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 24px;
+        animation: fadeIn 1.3s ease-out forwards;
+      }
+
+      /* Loading spinner */
+      .loader {
+        border: 4px solid #dee3ff;
+        border-top: 4px solid #3442d9;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin-bottom: 24px;
+      }
+
+      /* Button back to home */
+      a {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 8px;
+        background: linear-gradient(90deg, #4c6fff, #7f8bff);
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 3px 10px rgba(76, 111, 255, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      a:hover {
+        background: linear-gradient(90deg, #3c4ed8, #6574ff);
+        transform: translateY(-2px);
+      }
+
+      /* Keyframes */
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader"></div>
+    <h1>Redirecting...</h1>
+    <p>You’ll be automatically redirected to the home page shortly.</p>
+    <a href="/Wordora/">Go to Home Now</a>
+  </body>
+</html>
