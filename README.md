@@ -10,12 +10,10 @@ It fulfills the assignment requirements:
 - Search and filter (by title/author/category) and form to add books
 - Plain CSS for styling, with animations and responsive layout
 
-## Project Link
+## Live Demo
 
-- **GitHub Repository:** https://github.com/<your-username>/Wordora  
-- **Live Demo (GitHub Pages):** https://<your-username>.github.io/Wordora
+[https://pandit17.github.io/Wordora/](https://pandit17.github.io/Wordora/)
 
-*(Replace `<your-username>` with your GitHub username.)*
 
 ## Project structure
 ```
@@ -51,9 +49,13 @@ Wordora/
 │  │  ├─ BookDetails.jsx
 │  │  └─ NotFound.jsx
 │
-├─ vite.config.js
+├─ .gitignore
+├─ README.md
+├─ eslint.config.js
+├─ index.html
 ├─ package.json
-└─ README.md
+├─ package-lock.json
+└─vite.config.js
 
 ````
 
