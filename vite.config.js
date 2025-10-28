@@ -1,13 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// Vite configuration optimized for GitHub Pages + React Router (HashRouter)
+// Vite configuration for React Router + GitHub Pages
 export default defineConfig({
   plugins: [react()],
-
-  // Base URL for GitHub Pages
-  // Replace "Wordora" if your repository name changes
-  base: "/Wordora/",
+  base: "/Wordora/", // Matches your GitHub repo name exactly
 
   build: {
     outDir: "dist",
@@ -15,16 +12,14 @@ export default defineConfig({
     sourcemap: false,
   },
 
-  // Ensures proper file path resolution in production
   resolve: {
     alias: {
       "@": "/src",
     },
   },
 
-  // Custom server configuration for local development
   server: {
-    open: true, // Opens browser automatically
+    open: true,
     port: 5173,
     host: true,
   },
