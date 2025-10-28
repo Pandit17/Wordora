@@ -10,6 +10,11 @@ It fulfills the assignment requirements:
 - Search and filter (by title/author/category) and form to add books
 - Plain CSS for styling, with animations and responsive layout
 
+
+
+🔗 **GitHub Repository:** [Pandit17/Wordora](https://github.com/Pandit17/Wordora)
+
+
 ## Live Demo
 
 [https://pandit17.github.io/Wordora/](https://pandit17.github.io/Wordora/)
